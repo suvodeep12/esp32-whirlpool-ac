@@ -106,7 +106,8 @@ and byte 13 (checksum) differed. Offline assertions checked these invariants.
 
 This strengthens the 112-bit protocol match. Physical-remote synchronisation
 remains unreliable with missing frames; a decoder cannot reconstruct a missed
-command with certainty. No ESP32 transmission or AC acceptance test has occurred.
+command with certainty. These receive trials preceded the owner-reported
+successful 24 C transmission documented in the transmit-test project.
 A replay carries a whole AC state, so it must not be assumed to change only
 temperature. Power and mode effects require supervised observation.
 

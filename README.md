@@ -5,8 +5,9 @@ AC, model **SAI18B31N0D/2021**, using an ESP32, KY-022 receiver and a
 transistor-driven 940 nm emitter. No Raspberry Pi, cloud account or always-on
 PC is required for the standalone button-triggered experiment.
 
-**Status: experimental. Optical reception and repeatable 112-bit temperature
-messages have been observed; ESP32-to-AC control has not yet been verified.**
+**Status: experimental. The owner reports one successful ESP32 transmission:
+the running AC changed from 25 C to 24 C. Wider controls and long-term
+reliability remain unverified.**
 
 ## Evidence so far
 
@@ -18,7 +19,7 @@ messages have been observed; ESP32-to-AC control has not yet been verified.**
 | Six-press repeat trial | Five complete checksum-valid frames; one incomplete frame rejected |
 | State comparison | Repeated valid 24/25 C payloads were identical at each temperature; only temperature byte and checksum differed |
 | Transmit-test software | On-device self-checks passed; no sends during a 25-second startup observation with emitter disconnected |
-| Actual AC acceptance | **Not tested** |
+| Actual AC acceptance | Owner reports one 24 C command changed the running AC from 25 C to 24 C |
 
 These are bounded observations from 24 October 2026, not long-term reliability
 figures. The default IRremoteESP8266 v2.9.0 decoder reports UNKNOWN. The captured

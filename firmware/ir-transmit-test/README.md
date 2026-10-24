@@ -72,8 +72,12 @@ transmission occurred. An offline check verified the payload equals the recorded
 checksum-valid 24 C captures and the nominal frame duration is 117873 us.
 See [startup observation](startup-check.txt).
 
-Physical emitter output, VIN voltage/current capacity, carrier accuracy and AC
-acceptance remain untested. The module was disconnected during these checks.
+The module was disconnected during those software checks. In the subsequent
+wall-charger-powered trial, the owner reported the AC changed from 25 C to
+24 C after one BOOT press. A second press did nothing, as intended by this
+one-shot firmware. This is one owner-reported acceptance observation, not a
+measured reliability rate. VIN voltage/current capacity, optical waveform,
+carrier accuracy and long-term behavior remain unmeasured.
 
 ## Hardware source limits
 

@@ -1,5 +1,12 @@
 # ESP32 local AC control: research and purchase decision
 
+**Latest physical result:** The owner reports that the wall-charger-powered
+ESP32 sent the captured 24 C state and the running AC changed from 25 C to
+24 C. The next BOOT press did nothing because that firmware deliberately
+allows only one send per power-up. This is one successful observed outcome,
+not a measured long-term success rate or power-path qualification. Historical
+"not transmitted" notes below describe the preceding research/capture phases.
+
 **Current owner constraint: no additional purchases.** Earlier shopping tables
 and breakout suggestions are reference research only and are not the active
 plan. The new back-of-board photograph does not establish the exact USB-to-VIN
