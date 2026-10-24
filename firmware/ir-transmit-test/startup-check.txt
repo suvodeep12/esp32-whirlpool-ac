@@ -1,0 +1,10 @@
+TX_TEST gpio=18 button=BOOT self_tests=PASS sent=0
+HEARTBEAT uptime_ms=25000 sent=0
+TX_TEST gpio=18 button=BOOT self_tests=PASS sent=0
+HEARTBEAT uptime_ms=30000 sent=0
+TX_TEST gpio=18 button=BOOT self_tests=PASS sent=0
+HEARTBEAT uptime_ms=35000 sent=0
+TX_TEST gpio=18 button=BOOT self_tests=PASS sent=0
+HEARTBEAT uptime_ms=40000 sent=0
+TX_TEST gpio=18 button=BOOT self_tests=PASS sent=0
+HEARTBEAT uptime_ms=45000 sent=0

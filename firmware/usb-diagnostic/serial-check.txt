@@ -1,0 +1,49 @@
+READY chip=ESP32-D0WD-V3 cores=2 flash_bytes=4194304 heap_ok=1 reset=1
+PONG
+HEARTBEAT uptime_ms=5000 free_heap=351408
+HEARTBEAT uptime_ms=6000 free_heap=351408
+HEARTBEAT uptime_ms=7000 free_heap=351408
+HEARTBEAT uptime_ms=8000 free_heap=351408
+HEARTBEAT uptime_ms=9000 free_heap=351408
+READY chip=ESP32-D0WD-V3 cores=2 flash_bytes=4194304 heap_ok=1 reset=1
+PONG
+HEARTBEAT uptime_ms=10000 free_heap=351408
+HEARTBEAT uptime_ms=11000 free_heap=351408
+HEARTBEAT uptime_ms=12000 free_heap=351408
+HEARTBEAT uptime_ms=13000 free_heap=351408
+HEARTBEAT uptime_ms=14000 free_heap=351408
+HEARTBEAT uptime_ms=15000 free_heap=351408
+READY chip=ESP32-D0WD-V3 cores=2 flash_bytes=4194304 heap_ok=1 reset=1
+PONG
+HEARTBEAT uptime_ms=16000 free_heap=351408
+HEARTBEAT uptime_ms=17000 free_heap=351408
+HEARTBEAT uptime_ms=18000 free_heap=351408
+HEARTBEAT uptime_ms=19000 free_heap=351408
+HEARTBEAT uptime_ms=20000 free_heap=351408
+READY chip=ESP32-D0WD-V3 cores=2 flash_bytes=4194304 heap_ok=1 reset=1
+PONG
+HEARTBEAT uptime_ms=21000 free_heap=351408
+HEARTBEAT uptime_ms=22000 free_heap=351408
+HEARTBEAT uptime_ms=23000 free_heap=351408
+HEARTBEAT uptime_ms=24000 free_heap=351408
+HEARTBEAT uptime_ms=25000 free_heap=351408
+READY chip=ESP32-D0WD-V3 cores=2 flash_bytes=4194304 heap_ok=1 reset=1
+PONG
+HEARTBEAT uptime_ms=26000 free_heap=351408
+HEARTBEAT uptime_ms=27000 free_heap=351408
+HEARTBEAT uptime_ms=28000 free_heap=351408
+HEARTBEAT uptime_ms=29000 free_heap=351408
+HEARTBEAT uptime_ms=30000 free_heap=351408
+READY chip=ESP32-D0WD-V3 cores=2 flash_bytes=4194304 heap_ok=1 reset=1
+PONG
+HEARTBEAT uptime_ms=31000 free_heap=351408
+HEARTBEAT uptime_ms=32000 free_heap=351408
+HEARTBEAT uptime_ms=33000 free_heap=351408
+HEARTBEAT uptime_ms=34000 free_heap=351408
+HEARTBEAT uptime_ms=35000 free_heap=351408
+READY chip=ESP32-D0WD-V3 cores=2 flash_bytes=4194304 heap_ok=1 reset=1
+PONG
+HEARTBEAT uptime_ms=36000 free_heap=351408
+HEARTBEAT uptime_ms=37000 free_heap=351408
+HEARTBEAT uptime_ms=38000 free_heap=351408
+HEARTBEAT uptime_ms=39000 free_heap=351408

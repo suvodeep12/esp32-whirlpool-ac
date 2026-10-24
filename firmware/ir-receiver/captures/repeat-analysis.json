@@ -1,0 +1,56 @@
+[
+  {
+    "capture": 1,
+    "raw_entries": 221,
+    "data_bits": 109,
+    "timings_separated": true,
+    "checksum_valid": false,
+    "temperature_candidate": null,
+    "msb_bytes": "ea 32 0a 00 00 24 c4 60 1c 00 00 00 00 f0"
+  },
+  {
+    "capture": 2,
+    "raw_entries": 227,
+    "data_bits": 112,
+    "timings_separated": true,
+    "checksum_valid": true,
+    "temperature_candidate": 24,
+    "msb_bytes": "ea 32 0a 00 00 24 c4 e0 1c 00 00 00 00 9e"
+  },
+  {
+    "capture": 3,
+    "raw_entries": 227,
+    "data_bits": 112,
+    "timings_separated": true,
+    "checksum_valid": true,
+    "temperature_candidate": 25,
+    "msb_bytes": "ea 32 0a 00 00 24 c4 60 1c 00 00 00 00 1e"
+  },
+  {
+    "capture": 4,
+    "raw_entries": 227,
+    "data_bits": 112,
+    "timings_separated": true,
+    "checksum_valid": true,
+    "temperature_candidate": 24,
+    "msb_bytes": "ea 32 0a 00 00 24 c4 e0 1c 00 00 00 00 9e"
+  },
+  {
+    "capture": 5,
+    "raw_entries": 227,
+    "data_bits": 112,
+    "timings_separated": true,
+    "checksum_valid": true,
+    "temperature_candidate": 25,
+    "msb_bytes": "ea 32 0a 00 00 24 c4 60 1c 00 00 00 00 1e"
+  },
+  {
+    "capture": 6,
+    "raw_entries": 227,
+    "data_bits": 112,
+    "timings_separated": true,
+    "checksum_valid": true,
+    "temperature_candidate": 24,
+    "msb_bytes": "ea 32 0a 00 00 24 c4 e0 1c 00 00 00 00 9e"
+  }
+]

@@ -1,0 +1,8 @@
+work/
+.pio/
+__pycache__/
+.env
+.env.*
+*.bin
+*.elf
+*.map
