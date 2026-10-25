@@ -20,7 +20,8 @@ disconnected during PC-powered testing.
 | Phone browser access | Owner reports controls open at the direct IP; detailed layout and Internet-disconnected phone checks remain pending |
 | Software state over authenticated REST | Frame checks PASS, initial last transmission None since restart, actual AC state Unknown |
 | Two-second cooldown, no queued extra press | Unpowered trial: 24 C followed immediately by 25 C (0.141 seconds total) left status at 24 C; a 25 C press after 2.2 seconds changed status to 25 C |
-| Restart and router outage/recovery, no automatic command | Pending device test |
+| Wall-powered ESP32 restart | Owner reports AC stayed at 25 C during a five-second ESP32 power interruption and 30-second no-button observation; phone page returned with frame checks PASS and last transmission None since restart |
+| Router outage/recovery | Pending device test |
 | ESPHome 24 C AC response | Owner reports AC changed from 25 C to 24 C after pressing the phone button in the supervised wall-powered trial; optical waveform not measured |
 | ESPHome 25 C AC response | Owner reports AC changed from 24 C to 25 C after pressing the phone button in the supervised wall-powered trial; optical waveform not measured |
 | Repeating an already-current temperature | Owner reports one additional 25 C press left the AC at 25 C and on. This bounded observation does not establish all power-state semantics or all repeated commands |
