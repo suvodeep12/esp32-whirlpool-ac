@@ -9,9 +9,9 @@ connected. No room-temperature sensor or AC acknowledgement is present.
 ## Scope and limits
 
 - Exact captured 24/25 C frames only; whole-state commands may also restore
-  other settings. **The owner reports that the ESPHome 24 C button changed the
-  running AC from 25 C to 24 C** in a supervised wall-powered trial. This is
-  separate from the earlier Arduino success. 25 C remains experimental.
+  other settings. **The owner reports successful ESPHome changes from 25 C to
+  24 C and then back to 25 C** in supervised wall-powered trials. These are
+  separate from the earlier Arduino success; repeated reliability is unverified.
 - GPIO18, 38 kHz carrier, 33% carrier duty, one frame, no repeats.
 - Only explicit button presses call the send script. Extra presses during the
   approximately 118 ms send and following two-second cooldown are dropped.

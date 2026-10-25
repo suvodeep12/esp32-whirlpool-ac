@@ -5,9 +5,9 @@ AC, model **SAI18B31N0D/2021**, using an ESP32, KY-022 receiver and a
 transistor-driven 940 nm emitter. No Raspberry Pi, cloud account or always-on
 PC is required for the standalone ESPHome phone controller.
 
-**Status: experimental. The owner reports successful 25 C to 24 C AC control
-with both the earlier Arduino test and the ESPHome phone controller. Wider
-controls and long-term reliability remain unverified.**
+**Status: experimental. The owner reports successful 25 C to 24 C and 24 C to
+25 C changes using the ESPHome phone controller, following the earlier Arduino
+24 C test. Wider controls and long-term reliability remain unverified.**
 
 ## Evidence so far
 
@@ -19,7 +19,7 @@ controls and long-term reliability remain unverified.**
 | Six-press repeat trial | Five complete checksum-valid frames; one incomplete frame rejected |
 | State comparison | Repeated valid 24/25 C payloads were identical at each temperature; only temperature byte and checksum differed |
 | Transmit-test software | On-device self-checks passed; no sends during a 25-second startup observation with emitter disconnected |
-| Actual AC acceptance | Owner reports 25 C to 24 C responses with the Arduino test and, separately, the ESPHome phone button |
+| Actual AC acceptance | Owner reports ESPHome phone commands changed 25 C to 24 C, then 24 C to 25 C; earlier Arduino 24 C test also succeeded |
 
 These are bounded observations from 24–25 October 2026, not long-term reliability
 figures. The default IRremoteESP8266 v2.9.0 decoder reports UNKNOWN. The captured

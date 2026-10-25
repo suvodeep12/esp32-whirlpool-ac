@@ -23,7 +23,7 @@ Longer-term bedroom automation is a future goal, not this implementation.
 - No additional hardware purchases and no multimeter.
 - Existing ESP32, KY-022 receiver, transistor-driven 940 nm emitter and USB charger.
 - Physical remote captures and checksums support 24 C and 25 C state frames.
-- The owner reports one successful 25 C to 24 C AC response.
+- The owner reports successful ESPHome phone commands from 25 C to 24 C and back to 25 C.
 - No automatic sends on boot, reconnect, page load or retry.
 - Actual AC state is not queryable; command delivery must not be presented as acknowledgement.
 - Home network credentials and device access secrets must stay outside chat, logs and GitHub.

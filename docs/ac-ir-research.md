@@ -2,7 +2,8 @@
 
 **Latest physical result (25 October 2026):** The owner reports that pressing
 the ESPHome phone controller's 24 C button changed the running AC from 25 C to
-24 C in a supervised wall-powered trial. This independently follows the earlier
+24 C, and its 25 C button then changed it back to 25 C, in supervised
+wall-powered trials. These results independently follow the earlier
 Arduino BOOT-button trial, whose second press intentionally did nothing because
 it allowed only one send per power-up. These are bounded owner observations,
 not a measured long-term success rate or power-path qualification. Historical
