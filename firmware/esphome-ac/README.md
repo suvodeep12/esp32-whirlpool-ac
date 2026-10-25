@@ -80,6 +80,14 @@ The classic ESP32 uses 2.4 GHz Wi-Fi; a 5 GHz-only network will not work. During
 a router outage it should retain credentials and retry; a protected fallback
 AP becomes available. No IR is tied to either event. Validate this on hardware.
 
+If `bedroom-ac.local` does not open, use the assigned IPv4 address directly,
+with an explicit `http://` prefix. The firmware prints `HOME_IP=...` at 115200
+baud whenever it joins home Wi-Fi, without printing the SSID or password. This
+provides a fallback when mDNS is unavailable; it does not make the DHCP address
+permanent. Verify that the phone is on the same home LAN, with guest/client
+isolation or a VPN ruled out if the IP also fails. A saved bookmark may need
+updating after the router assigns a different address.
+
 ## Power and security
 
 The emitter's current and board's USB-to-VIN power path remain unmeasured.
