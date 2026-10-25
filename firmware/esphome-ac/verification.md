@@ -21,12 +21,13 @@ disconnected during PC-powered testing.
 | Software state over authenticated REST | Frame checks PASS, initial last transmission None since restart, actual AC state Unknown |
 | Two-second cooldown, no queued extra press | Unpowered trial: 24 C followed immediately by 25 C (0.141 seconds total) left status at 24 C; a 25 C press after 2.2 seconds changed status to 25 C |
 | Restart and router outage/recovery, no automatic command | Pending device test |
-| ESPHome 24 C optical/AC response | Pending supervised wall-powered trial |
+| ESPHome 24 C AC response | Owner reports AC changed from 25 C to 24 C after pressing the phone button in the supervised wall-powered trial; optical waveform not measured |
 | ESPHome 25 C optical/AC response | Pending supervised wall-powered trial |
 | Long-run/thermal/current/power-path suitability | Unverified; no multimeter |
 
-The original Arduino 24 C owner report remains valid for that earlier firmware;
-it is not carried forward as a pass for ESPHome.
+The ESPHome 24 C result is a new owner-reported observation, separate from the
+earlier Arduino 24 C report. Neither establishes a long-run success rate,
+complete protocol compatibility or electrical/thermal qualification.
 
 The owner reported that `bedroom-ac.local` did not open. Windows name lookup and
 a 12-second mDNS service discovery also failed. A minimal `wifi.on_connect`
