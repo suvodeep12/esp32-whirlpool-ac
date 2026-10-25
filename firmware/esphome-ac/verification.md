@@ -16,9 +16,10 @@ disconnected during PC-powered testing.
 | Setup AP password rejection | Pending negative phone test |
 | Unauthenticated web page | HTTP 401 with Digest challenge, verified from PC |
 | Authenticated web page | HTTP 200, 77,862-byte embedded page, verified from PC |
-| Wrong password / unauthenticated control rejected | Pending control-endpoint tests |
-| Phone browser layout, local assets, explicit buttons | Pending phone test |
-| Two-second cooldown, no queued extra press | Pending device test |
+| Wrong password / unauthenticated control | Both actual button POST requests returned HTTP 401 in an emitter-unpowered trial |
+| Phone browser access | Owner reports controls open at the direct IP; detailed layout and Internet-disconnected phone checks remain pending |
+| Software state over authenticated REST | Frame checks PASS, initial last transmission None since restart, actual AC state Unknown |
+| Two-second cooldown, no queued extra press | Unpowered trial: 24 C followed immediately by 25 C (0.141 seconds total) left status at 24 C; a 25 C press after 2.2 seconds changed status to 25 C |
 | Restart and router outage/recovery, no automatic command | Pending device test |
 | ESPHome 24 C optical/AC response | Pending supervised wall-powered trial |
 | ESPHome 25 C optical/AC response | Pending supervised wall-powered trial |
@@ -36,5 +37,12 @@ This provides a fallback; it does not prove why mDNS failed on the phone.
 One subsequent state-stream connection attempt timed out; a following page
 request returned the expected 401, with no serial crash/brownout observed.
 Intermittent reachability and long-run behavior remain open checks. The attempted
-short-name text-sensor REST paths returned 404 and are not claimed as entity
-verification. Phone control and actual AC acknowledgement remain separate gates.
+short-name text-sensor REST paths returned 404. Source inspection showed this
+version matches literal entity names, so URL-encoded full names subsequently
+returned HTTP 200 with the expected states. This required no firmware change.
+
+The owner subsequently confirmed the phone control page opens. An authenticated,
+emitter-unpowered button trial verified software cooldown and repeated manual
+commands. The actual-state entity remained Unknown; the last-command text only
+reported a send request. No GPIO waveform, optical output or AC response was
+measured in this trial. The transmitter +5V remained disconnected throughout.
