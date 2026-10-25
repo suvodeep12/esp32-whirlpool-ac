@@ -6,3 +6,6 @@ __pycache__/
 *.bin
 *.elf
 *.map
+secrets.yaml
+.esphome/
+.private/

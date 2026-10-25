@@ -3,11 +3,11 @@
 Local IR-control research and firmware for a non-Wi-Fi Whirlpool split inverter
 AC, model **SAI18B31N0D/2021**, using an ESP32, KY-022 receiver and a
 transistor-driven 940 nm emitter. No Raspberry Pi, cloud account or always-on
-PC is required for the standalone button-triggered experiment.
+PC is required for the standalone ESPHome phone controller.
 
-**Status: experimental. The owner reports one successful ESP32 transmission:
-the running AC changed from 25 C to 24 C. Wider controls and long-term
-reliability remain unverified.**
+**Status: experimental. The owner reports successful 25 C to 24 C and 24 C to
+25 C changes using the ESPHome phone controller, following the earlier Arduino
+24 C test. Wider controls and long-term reliability remain unverified.**
 
 ## Evidence so far
 
@@ -19,9 +19,9 @@ reliability remain unverified.**
 | Six-press repeat trial | Five complete checksum-valid frames; one incomplete frame rejected |
 | State comparison | Repeated valid 24/25 C payloads were identical at each temperature; only temperature byte and checksum differed |
 | Transmit-test software | On-device self-checks passed; no sends during a 25-second startup observation with emitter disconnected |
-| Actual AC acceptance | Owner reports one 24 C command changed the running AC from 25 C to 24 C |
+| Actual AC acceptance | Owner reports ESPHome phone commands changed 25 C to 24 C, then 24 C to 25 C; earlier Arduino 24 C test also succeeded |
 
-These are bounded observations from 24 October 2026, not long-term reliability
+These are bounded observations from 24–25 October 2026, not long-term reliability
 figures. The default IRremoteESP8266 v2.9.0 decoder reports UNKNOWN. The captured
 frame matches the separate 112-bit Whirlpool India format reported in
 [upstream issue 2204](https://github.com/crankyoldgit/IRremoteESP8266/issues/2204),
@@ -33,6 +33,8 @@ The library's built-in 168-bit Whirlpool protocol is a different format.
 - [USB diagnostic](firmware/usb-diagnostic/README.md): basic board checks and a reusable serial checker.
 - [Receive-only capture](firmware/ir-receiver/README.md): GPIO19 capture firmware, original raw timings and offline analysis results.
 - [One-command transmit experiment](firmware/ir-transmit-test/README.md): GPIO18, one manual BOOT-button trigger per boot, no startup send or automatic retry.
+- [ESPHome phone controller](firmware/esphome-ac/README.md): selected standalone web interface, captured 24/25 C buttons, private phone provisioning; see its acceptance record before treating it as validated.
+- [GitHub / Home Assistant comparison](docs/github-reuse.md): reuse decision and independent peer-protocol experiment.
 - [Research and parts comparison](docs/ac-ir-research.md): sources, Indian seller observations, electrical unknowns, power-state limitations and future steps.
 
 ## Local setup
@@ -94,7 +96,8 @@ AC received it. Missing frames, ESP32 restarts and AC power interruptions can
 desynchronise an estimated state. Start power as unknown until independently
 confirmed. No firmware here automatically restores AC power after a restart.
 
-No Wi-Fi control interface or unattended automation has been implemented yet.
+The ESPHome Wi-Fi interface is implemented; its phone provisioning and optical
+acceptance gates are tracked separately. Unattended automation is not enabled.
 Raw original flash backups, local tool installations, personal photos, account
 credentials and delivery-location details are not part of this public source
 snapshot. All included capture evidence is local AC-remote test data.

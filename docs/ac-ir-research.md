@@ -1,18 +1,20 @@
 # ESP32 local AC control: research and purchase decision
 
-**Latest physical result:** The owner reports that the wall-charger-powered
-ESP32 sent the captured 24 C state and the running AC changed from 25 C to
-24 C. The next BOOT press did nothing because that firmware deliberately
-allows only one send per power-up. This is one successful observed outcome,
+**Latest physical result (25 October 2026):** The owner reports that pressing
+the ESPHome phone controller's 24 C button changed the running AC from 25 C to
+24 C, and its 25 C button then changed it back to 25 C, in supervised
+wall-powered trials. These results independently follow the earlier
+Arduino BOOT-button trial, whose second press intentionally did nothing because
+it allowed only one send per power-up. These are bounded owner observations,
 not a measured long-term success rate or power-path qualification. Historical
-"not transmitted" notes below describe the preceding research/capture phases.
+"not transmitted" notes below describe preceding research/capture phases.
 
 **Current owner constraint: no additional purchases.** Earlier shopping tables
 and breakout suggestions are reference research only and are not the active
 plan. The new back-of-board photograph does not establish the exact USB-to-VIN
 power circuit or its load rating. FlyRobo SKU 4073 specifies USB-C 5 V input,
 but its published product page does not provide the VIN output current rating
-or a schematic. The high-power transmitter remains disconnected. A borrowed
+or a schematic. Keep transmitter power disconnected during PC tests. A borrowed
 meter plus power-path/component verification is a possible no-purchase next
 step; photos or firmware alone do not establish this electrical capability.
 

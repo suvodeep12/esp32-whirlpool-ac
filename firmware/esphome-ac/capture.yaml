@@ -1,0 +1,22 @@
+# Temporary capture profile. Existing 24/25 C controls remain the only senders.
+packages:
+  controller: !include bedroom-ac.yaml
+
+logger:
+  level: INFO
+  initial_level: WARN
+  logs:
+    remote.raw: INFO
+
+remote_receiver:
+  pin:
+    number: GPIO19
+    inverted: true
+    mode:
+      input: true
+      pullup: true
+  dump: raw
+  filter: 50us
+  idle: 10ms
+  rmt_symbols: 192
+  receive_symbols: 192

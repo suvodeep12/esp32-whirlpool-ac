@@ -1,0 +1,117 @@
+esphome:
+  name: bedroom-ac
+  friendly_name: Bedroom AC
+  min_version: 2026.10.0
+  includes:
+    - captured_frames.h
+  on_boot:
+    priority: -100
+    then:
+      - lambda: |-
+          id(frame_checks) = captured::selfTest();
+          ESP_LOGW("ac_checks", "FRAME_SELF_TEST=%s", id(frame_checks) ? "PASS" : "FAIL");
+      - text_sensor.template.publish:
+          id: software_checks
+          state: !lambda |-
+            return id(frame_checks) ? "PASS - frame checks only" : "FAIL - IR commands blocked";
+      - text_sensor.template.publish:
+          id: last_transmission
+          state: "None since restart"
+
+esp32:
+  board: esp32dev
+  flash_size: 4MB
+  framework:
+    type: esp-idf
+    version: 5.5.6
+
+logger:
+  level: WARN
+
+# The phone supplies the home SSID/password through the protected setup hotspot.
+wifi:
+  id: bedroom_wifi
+  reboot_timeout: 0s
+  on_connect:
+    then:
+      - lambda: |-
+          char address[network::IP_ADDRESS_BUFFER_SIZE];
+          ESP_LOGW("ac_network", "HOME_IP=%s", id(bedroom_wifi).get_ip_addresses()[0].str_to(address));
+  ap:
+    ssid: Bedroom-AC-Setup
+    password: !secret setup_password
+    ap_timeout: 15s
+
+captive_portal:
+
+web_server:
+  port: 80
+  version: 3
+  local: true
+  log: false
+  ota: false
+  auth:
+    username: owner
+    password: !secret control_password
+    type: digest
+
+# No native API/MQTT dependency: normal control needs only the ESP32 and phone.
+globals:
+  - id: frame_checks
+    type: bool
+    restore_value: false
+    initial_value: "false"
+
+remote_transmitter:
+  pin: GPIO18
+  carrier_duty_percent: 33%
+  non_blocking: false
+  eot_level: false
+
+text_sensor:
+  - platform: template
+    name: "Software checks"
+    id: software_checks
+    update_interval: never
+  - platform: template
+    name: "Actual AC state"
+    lambda: return {"Unknown - check the AC; remote changes are not tracked"};
+    update_interval: 60s
+  - platform: template
+    name: "Last IR transmission"
+    id: last_transmission
+    update_interval: never
+
+script:
+  - id: send_captured
+    mode: single
+    parameters:
+      temperature: int
+    then:
+      - if:
+          condition:
+            lambda: return id(frame_checks) && (temperature == 24 || temperature == 25);
+          then:
+            - remote_transmitter.transmit_raw:
+                carrier_frequency: 38kHz
+                code: !lambda return captured::waveform(temperature);
+            - text_sensor.template.publish:
+                id: last_transmission
+                state: !lambda |-
+                  return str_sprintf("%d C send requested; AC response unconfirmed", temperature);
+            # Dropped presses are never queued or replayed after this cooldown.
+            - delay: 2s
+
+button:
+  - platform: template
+    name: "Send captured 24 C"
+    on_press:
+      - script.execute:
+          id: send_captured
+          temperature: 24
+  - platform: template
+    name: "Send captured 25 C - experimental"
+    on_press:
+      - script.execute:
+          id: send_captured
+          temperature: 25
