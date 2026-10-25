@@ -23,7 +23,7 @@ disconnected during PC-powered testing.
 | Restart and router outage/recovery, no automatic command | Pending device test |
 | ESPHome 24 C AC response | Owner reports AC changed from 25 C to 24 C after pressing the phone button in the supervised wall-powered trial; optical waveform not measured |
 | ESPHome 25 C AC response | Owner reports AC changed from 24 C to 25 C after pressing the phone button in the supervised wall-powered trial; optical waveform not measured |
-| Repeating an already-current temperature | Pending physical test; do not assume idempotence or power semantics from the two temperature changes |
+| Repeating an already-current temperature | Owner reports one additional 25 C press left the AC at 25 C and on. This bounded observation does not establish all power-state semantics or all repeated commands |
 | Long-run/thermal/current/power-path suitability | Unverified; no multimeter |
 
 The ESPHome 24 C and 25 C results are new owner-reported observations, separate
