@@ -33,6 +33,8 @@ The library's built-in 168-bit Whirlpool protocol is a different format.
 - [USB diagnostic](firmware/usb-diagnostic/README.md): basic board checks and a reusable serial checker.
 - [Receive-only capture](firmware/ir-receiver/README.md): GPIO19 capture firmware, original raw timings and offline analysis results.
 - [One-command transmit experiment](firmware/ir-transmit-test/README.md): GPIO18, one manual BOOT-button trigger per boot, no startup send or automatic retry.
+- [ESPHome phone controller](firmware/esphome-ac/README.md): selected standalone web interface, captured 24/25 C buttons, private phone provisioning; see its acceptance record before treating it as validated.
+- [GitHub / Home Assistant comparison](docs/github-reuse.md): reuse decision and independent peer-protocol experiment.
 - [Research and parts comparison](docs/ac-ir-research.md): sources, Indian seller observations, electrical unknowns, power-state limitations and future steps.
 
 ## Local setup
@@ -94,7 +96,8 @@ AC received it. Missing frames, ESP32 restarts and AC power interruptions can
 desynchronise an estimated state. Start power as unknown until independently
 confirmed. No firmware here automatically restores AC power after a restart.
 
-No Wi-Fi control interface or unattended automation has been implemented yet.
+The ESPHome Wi-Fi interface is implemented; its phone provisioning and optical
+acceptance gates are tracked separately. Unattended automation is not enabled.
 Raw original flash backups, local tool installations, personal photos, account
 credentials and delivery-location details are not part of this public source
 snapshot. All included capture evidence is local AC-remote test data.
