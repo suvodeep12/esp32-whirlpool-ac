@@ -26,6 +26,9 @@ disconnected during PC-powered testing.
 | ESPHome 25 C AC response | Owner reports AC changed from 24 C to 25 C after pressing the phone button in the supervised wall-powered trial; optical waveform not measured |
 | Repeating an already-current temperature | Owner reports one additional 25 C press left the AC at 25 C and on. This bounded observation does not establish all power-state semantics or all repeated commands |
 | Long-run/thermal/current/power-path suitability | Unverified; no multimeter |
+| Prepared 20–26 C capture profile | Schema/build passed offline; native GPIO19 receiver added in a separate profile; not uploaded while owner is busy |
+| Capture/evidence/secrets Python suite | 13 passed, including all eight historical capture verdicts and synthetic negative cases; no new physical range evidence implied |
+| Requested 20/21/22/23/26 C controls | Not enabled; fresh remote captures and supervised AC trials remain pending |
 
 The ESPHome 24 C and 25 C results are new owner-reported observations, separate
 from the earlier Arduino 24 C report. They do not establish a long-run success

@@ -29,6 +29,7 @@ Longer-term bedroom automation is a future goal, not this implementation.
 - Home network credentials and device access secrets must stay outside chat, logs and GitHub.
 - Transmitter power remains disconnected during PC-powered software testing.
 - The owner selected ESPHome's built-in interface after the GitHub/Home Assistant comparison.
+- The requested next temperature range is 20–26 C; fresh captures are pending the owner's availability.
 
 ## Current implementation decisions
 

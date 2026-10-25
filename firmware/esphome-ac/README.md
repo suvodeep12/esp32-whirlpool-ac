@@ -106,6 +106,10 @@ facility during setup; anyone with its AP password may have that access.
 
 ## Verification
 
+The next requested range is 20–26 C. The receiver profile and offline capture
+checks are prepared, but the running device has not been updated for that
+range. See [capture preparation and acceptance gates](RANGE-CAPTURE.md).
+
 `captured::selfTest()` runs on every device boot and checks allowlisting,
 checksums, waveform shape, durations, decoded payloads and a corrupted checksum.
 For a host with a C++ compiler, an independent assert-based harness is also
@@ -119,8 +123,8 @@ g++ -std=c++11 tests/frame_test.cpp -o frame-test
 It is not automatically run by the ESPHome build. Software checks do not
 replace the acceptance matrix in [verification.md](verification.md).
 
-The Python evidence/secrets tests need no host C++ compiler. From the repository
-root: `python -m unittest discover -s firmware/esphome-ac/tests -p test_evidence.py -v`.
+The Python evidence/capture/secrets tests need no host C++ compiler. From the
+repository root: `python -m unittest discover -s firmware/esphome-ac/tests -p 'test_*.py' -v`.
 
 Sources: [web server](https://esphome.io/components/web_server/),
 [raw transmitter](https://esphome.io/components/remote_transmitter/),
